@@ -1,0 +1,57 @@
+﻿@page
+@{
+ViewData["Title"] = "SignalR Chat";
+}
+<h1>Chat en tiempo real</h1>
+
+<div>
+    <label for="userInput">Usuario</label>
+    <input id="userInput" maxlength="40" />
+</div>
+
+<div>
+    <label for="messageInput">Mensaje</label>
+    <input id="messageInput" maxlength="1000" />
+</div>
+
+<button id="sendButton" disabled>
+    Enviar
+</button>
+
+<p id="status">Conectando...</p>
+
+<ul id="messagesList"></ul>
+
+
+<hr />
+
+<h2>Notificaciones de pedidos</h2>
+
+<div>
+    <label for="orderId">Número del pedido:</label>
+    <input id="orderId" type="number" min="1" />
+</div>
+
+<div>
+    <label for="orderStatus">Estado del pedido:</label>
+    <select id="orderStatus">
+        <option value="Pendiente">Pendiente</option>
+        <option value="En preparación">En preparación</option>
+        <option value="Enviado">Enviado</option>
+        <option value="Entregado">Entregado</option>
+    </select>
+</div>
+
+<button id="updateOrderButton" disabled>
+    Actualizar pedido
+</button>
+
+<h3>Actualizaciones recibidas</h3>
+<ul id="ordersList"></ul>
+
+
+<script
+   src="~/js/signalr/dist/browser/signalr.min.js">
+</script>
+
+<script src="~/js/chat.js"></script>
